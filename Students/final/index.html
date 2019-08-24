@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login And Signup</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Hepta+Slab:400,800&display=swap" rel="stylesheet"> 
+</head>
+<body>
+	<div class="login-page">
+		<div class="form">
+			<form class="register-form">
+				<input type="text" placeholder="First Name" required>
+				<input type="text" placeholder="Last Name" required>
+				<input id="datefield" type='date' min='1899-01-01' max='2005-01-01'></input>
+				<input type="text" placeholder="Phone Number" required>
+				<input type="email" placeholder="Email" required> 
+				<input type="password" placeholder="Password" required id="password">
+				<input type="password" placeholder="Confirm Password" required id="confirm_password">
+				<span id="message"></span>
+				<!-- <button>Create</button> -->
+				<button type="submit">Create</button>
+				<p>Already Registered? <a href="#">Login Here</a></p>
+			</form>
+
+			<form class="login-form">
+				<input type="email" placeholder="Email ID" required>
+				<input type="password" placeholder="Password" required>
+				<button>Log In</button>
+				<p>Not Registered? <a href="#">Sign Up</a></p>
+			</form>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
