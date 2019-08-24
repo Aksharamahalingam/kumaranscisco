@@ -80,3 +80,9 @@ span {
 .form .register-form {
 	display: none;
 }
+
+h1 {
+	font-family: 'Hepta Slab', serif;
+	color: #ffffff;
+	text-align: center;
+}
