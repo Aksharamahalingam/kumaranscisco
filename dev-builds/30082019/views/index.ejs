@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <!-- the CSS part -->
+     <style>
+          body {
+	background-image: linear-gradient(to right, blue , red);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+}
+
+.login-page {
+	width : 400px;
+	padding: 10% 0 0;
+	margin: auto;
+}
+
+.form {
+	position: relative;
+	z-index: 1;
+	background: rgba(255,255,255,0.8);
+	max-width: 360px;
+	margin: 0 auto 100px;
+	padding: 45px;
+	text-align: center;
+}
+
+.form input {
+	font-family: 'Hepta Slab', serif;
+	outline: 1;
+	background: #f2f2f2;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+button {
+	font-family: 'Hepta Slab', serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #4caf50;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: #ffffff;
+	font-size: 14px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+p {
+	font-family: 'Hepta Slab', serif;
+}
+
+a:link {
+  color: blue;
+  text-decoration: none;
+}
+a:visited {
+  color: purple;
+  text-decoration: none;
+}
+a:hover {
+  color: purple;
+  text-decoration: none;
+}
+a:active {
+  color: purple;
+  text-decoration: none;
+}
+
+span {
+	margin: 10px;
+	font-family: 'Hepta Slab', serif;
+}
+
+.form button:hover, .form button:active {
+	background: #43a047;
+}
+
+.form .register-form {
+	display: none;
+}
+
+h1 {
+	font-family: 'Hepta Slab', serif;
+	color: #ffffff;
+	text-align: center;
+}
+/* Our main HTML code */
+</style>
+	<title>Login And Signup</title>
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Hepta+Slab:400,800&display=swap" rel="stylesheet">
+</head>
+<body>
+	<h1>We can put the required heading</h1>
+	<div class="login-page">
+		<div class="form">
+			<form action="/hello" method="POST" class="register-form">
+				<input type="text" placeholder="First Name" name="firstname" required>
+				<input type="text" placeholder="Last Name" name="lastname" required>
+				<input id="datefield" type='date' min='1899-01-01' max='2005-01-01'></input>
+				<input type="number" placeholder="Phone Number" name="phonenumber" required>
+				<input type="email" placeholder="Email" name="emailid" required>
+				<input type="text" placeholder="Username" name="username" required>
+				<input type="password" placeholder="Password" required id="password">
+				<input type="password" placeholder="Confirm Password" required id="confirm_password">
+				<span id="message"></span>
+				<!-- <button>Create</button> -->
+				<button type="submit">Create</button>
+				<p>Already Registered? <a href="#">Login Here</a></p>
+			</form>
+
+			<form class="login-form">
+				<input type="email" placeholder="Email ID" required>
+				<input type="password" placeholder="Password" required>
+				<button>Log In</button>
+				<p>Not Registered? <a href="#">Sign Up</a></p>
+			</form>
+		</div>
+     </div>
+     <!-- The JAVASCRIPT -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+     <script >
+     $('#password, #confirm_password').on('keyup', function () {
+          if ($('#password').val() == $('#confirm_password').val()) {
+            $('#message').html('Matching').css('color', 'black');
+          } else 
+            $('#message').html('Not Matching').css('color', 'black');
+        });
+        
+        $('a').click(function(){
+             $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+        })
+        </script>
+</body>
+</html>
